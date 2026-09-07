@@ -1,0 +1,57 @@
+{
+  "@@locale": "en",
+  "appTitle": "Flutter Native Base",
+  "helloWorld": "Hello, World!",
+  "counterLabel": "Button tapped {count} times",
+  "@counterLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "nativeAddResult": "Native add result: {result}",
+  "@nativeAddResult": {
+    "placeholders": {
+      "result": {
+        "type": "int"
+      }
+    }
+  },
+  "version": "Version: {version}",
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "arithmeticSection": "Arithmetic (sum / multiply)",
+  "mathSection": "Math (factorial / fibonacci)",
+  "arraySection": "Array (sum_array)",
+  "stringSection": "String (to_upper)",
+  "labelA": "a",
+  "labelB": "b",
+  "labelFactorialN": "n (factorial)",
+  "labelFibonacciN": "n (fibonacci)",
+  "labelCommaIntegers": "Comma-separated integers",
+  "labelInputString": "Input string",
+  "buttonAdd": "Add",
+  "buttonMultiply": "Multiply",
+  "buttonFactorial": "Factorial",
+  "buttonFibonacci": "Fibonacci",
+  "buttonSumArray": "Sum Array",
+  "buttonToUpper": "To Upper",
+  "resultAdd": "Add: {value}",
+  "@resultAdd": { "placeholders": { "value": { "type": "String" } } },
+  "resultMultiply": "Multiply: {value}",
+  "@resultMultiply": { "placeholders": { "value": { "type": "String" } } },
+  "resultFactorial": "Factorial: {value}",
+  "@resultFactorial": { "placeholders": { "value": { "type": "String" } } },
+  "resultFibonacci": "Fibonacci: {value}",
+  "@resultFibonacci": { "placeholders": { "value": { "type": "String" } } },
+  "resultArraySum": "Array sum: {value}",
+  "@resultArraySum": { "placeholders": { "value": { "type": "String" } } },
+  "resultToUpper": "Result: {value}",
+  "@resultToUpper": { "placeholders": { "value": { "type": "String" } } }
+}
