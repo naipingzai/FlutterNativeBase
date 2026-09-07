@@ -8,13 +8,13 @@ import 'package:ffi/ffi.dart';
 /// Load the native library.
 DynamicLibrary _loadLib() {
   if (Platform.isLinux) {
-    return DynamicLibrary.open('libnpz_flutter_code.so');
+    return DynamicLibrary.open('libflutter_native_base.so');
   } else if (Platform.isAndroid) {
-    return DynamicLibrary.open('libnpz_flutter_code.so');
+    return DynamicLibrary.open('libflutter_native_base.so');
   } else if (Platform.isWindows) {
-    return DynamicLibrary.open('npz_flutter_code.dll');
+    return DynamicLibrary.open('flutter_native_base.dll');
   } else if (Platform.isMacOS || Platform.isIOS) {
-    return DynamicLibrary.open('libnpz_flutter_code.dylib');
+    return DynamicLibrary.open('libflutter_native_base.dylib');
   }
   throw UnsupportedError('Unsupported platform: ${Platform.operatingSystem}');
 }
