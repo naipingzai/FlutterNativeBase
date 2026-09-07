@@ -10,7 +10,6 @@ headers:
     - 'native/include/bridge_api.h'
   include-directives:
     - 'native/include/bridge_api.h'
-ffi-native:
 preamble: |
   // AUTO GENERATED FILE, DO NOT EDIT.
   //
