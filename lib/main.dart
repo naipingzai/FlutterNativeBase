@@ -7,11 +7,27 @@ void main() {
   runApp(const FlutterNativeBaseApp());
 }
 
-class FlutterNativeBaseApp extends StatelessWidget {
+class FlutterNativeBaseApp extends StatefulWidget {
   const FlutterNativeBaseApp({super.key});
+  @override
+  State<FlutterNativeBaseApp> createState() => _FlutterNativeBaseAppState();
+}
+
+class _FlutterNativeBaseAppState extends State<FlutterNativeBaseApp> {
+  Locale _locale = const Locale('en');
+
+  void _switchLocale() {
+    setState(() {
+      _locale = _locale.languageCode == 'en'
+          ? const Locale('zh')
+          : const Locale('en');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: _locale,
       title: 'Flutter Native Base',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
@@ -24,13 +40,14 @@ class FlutterNativeBaseApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+      home: HomePage(onSwitchLocale: _switchLocale),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final VoidCallback onSwitchLocale;
+  const HomePage({super.key, required this.onSwitchLocale});
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -38,7 +55,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String _version = '-';
   String _rawInfo = '-';
-  Locale _locale = const Locale('en');
 
   @override
   void initState() {
@@ -56,16 +72,6 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void _refresh() => setState(() => _load());
-
-  void _switchLocale() {
-    setState(() {
-      _locale = _locale.languageCode == 'en'
-          ? const Locale('zh')
-          : const Locale('en');
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -76,61 +82,45 @@ class _HomePageState extends State<HomePage> {
     final compiler = p.length > 2 ? p[2] : '-';
     final osVer = p.length > 3 ? p[3] : '-';
 
-    return MaterialApp(
-      locale: _locale,
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: theme.colorScheme.inversePrimary,
-          title: Text(l10n.appTitle),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.language),
-              onPressed: _switchLocale,
-              tooltip: l10n.buttonSwitchLang,
-            ),
-          ],
-        ),
-        body: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            Card(child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(l10n.nativeVersion(_version), style: theme.textTheme.titleMedium),
-                const SizedBox(height: 4),
-                Text('C compiled via hook/build.dart (package_ffi)', style: theme.textTheme.bodySmall),
-              ]),
-            )),
-            const SizedBox(height: 16),
-            Card(child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(l10n.platformInfoTitle, style: theme.textTheme.titleMedium),
-                const SizedBox(height: 12),
-                _row(l10n.labelOS, os),
-                const SizedBox(height: 8),
-                _row(l10n.labelArch, arch),
-                const SizedBox(height: 8),
-                _row(l10n.labelCompiler, compiler),
-                const SizedBox(height: 8),
-                _row(l10n.labelOSVersion, osVer),
-                const SizedBox(height: 16),
-                FilledButton.icon(
-                  onPressed: _refresh,
-                  icon: const Icon(Icons.refresh),
-                  label: Text(l10n.buttonRefresh),
-                ),
-              ]),
-            )),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: theme.colorScheme.inversePrimary,
+        title: Text(l10n.appTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language),
+            onPressed: widget.onSwitchLocale,
+            tooltip: l10n.buttonSwitchLang,
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Card(child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(l10n.nativeVersion(_version), style: theme.textTheme.titleMedium),
+              const SizedBox(height: 4),
+              Text('C compiled via hook/build.dart (package_ffi)', style: theme.textTheme.bodySmall),
+            ]),
+          )),
+          const SizedBox(height: 16),
+          Card(child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(l10n.platformInfoTitle, style: theme.textTheme.titleMedium),
+              const SizedBox(height: 12),
+              _row(l10n.labelOS, os),
+              const SizedBox(height: 8),
+              _row(l10n.labelArch, arch),
+              const SizedBox(height: 8),
+              _row(l10n.labelCompiler, compiler),
+              const SizedBox(height: 8),
+              _row(l10n.labelOSVersion, osVer),
+            ]),
+          )),
+        ],
       ),
     );
   }
