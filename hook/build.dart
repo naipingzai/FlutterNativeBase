@@ -11,8 +11,6 @@ void main(List<String> args) async {
       assetName: '${packageName}_bindings_generated.dart',
       sources: [
         'native/src/bridge_api.c',
-        'native/src/core/math_utils.c',
-        'native/src/core/string_utils.c',
       ],
       includes: [
         'native/include',

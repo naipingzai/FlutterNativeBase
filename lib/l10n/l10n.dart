@@ -104,161 +104,59 @@ abstract class AppLocalizations {
   /// **'Flutter Native Base'**
   String get appTitle;
 
-  /// No description provided for @helloWorld.
+  /// No description provided for @nativeVersion.
   ///
   /// In en, this message translates to:
-  /// **'Hello, World!'**
-  String get helloWorld;
+  /// **'Native Version: {version}'**
+  String nativeVersion(String version);
 
-  /// No description provided for @counterLabel.
+  /// No description provided for @platformInfoTitle.
   ///
   /// In en, this message translates to:
-  /// **'Button tapped {count} times'**
-  String counterLabel(int count);
+  /// **'Platform Info'**
+  String get platformInfoTitle;
 
-  /// No description provided for @nativeAddResult.
+  /// No description provided for @labelOS.
   ///
   /// In en, this message translates to:
-  /// **'Native add result: {result}'**
-  String nativeAddResult(int result);
+  /// **'Operating System'**
+  String get labelOS;
 
-  /// No description provided for @version.
+  /// No description provided for @labelArch.
   ///
   /// In en, this message translates to:
-  /// **'Version: {version}'**
-  String version(String version);
+  /// **'Architecture'**
+  String get labelArch;
 
-  /// No description provided for @arithmeticSection.
+  /// No description provided for @labelCompiler.
   ///
   /// In en, this message translates to:
-  /// **'Arithmetic (sum / multiply)'**
-  String get arithmeticSection;
+  /// **'Compiler'**
+  String get labelCompiler;
 
-  /// No description provided for @mathSection.
+  /// No description provided for @labelOSVersion.
   ///
   /// In en, this message translates to:
-  /// **'Math (factorial / fibonacci)'**
-  String get mathSection;
+  /// **'OS Version'**
+  String get labelOSVersion;
 
-  /// No description provided for @arraySection.
+  /// No description provided for @buttonRefresh.
   ///
   /// In en, this message translates to:
-  /// **'Array (sum_array)'**
-  String get arraySection;
+  /// **'Refresh'**
+  String get buttonRefresh;
 
-  /// No description provided for @stringSection.
+  /// No description provided for @buttonSwitchLang.
   ///
   /// In en, this message translates to:
-  /// **'String (to_upper)'**
-  String get stringSection;
+  /// **'Switch Language'**
+  String get buttonSwitchLang;
 
-  /// No description provided for @labelA.
+  /// No description provided for @loading.
   ///
   /// In en, this message translates to:
-  /// **'a'**
-  String get labelA;
-
-  /// No description provided for @labelB.
-  ///
-  /// In en, this message translates to:
-  /// **'b'**
-  String get labelB;
-
-  /// No description provided for @labelFactorialN.
-  ///
-  /// In en, this message translates to:
-  /// **'n (factorial)'**
-  String get labelFactorialN;
-
-  /// No description provided for @labelFibonacciN.
-  ///
-  /// In en, this message translates to:
-  /// **'n (fibonacci)'**
-  String get labelFibonacciN;
-
-  /// No description provided for @labelCommaIntegers.
-  ///
-  /// In en, this message translates to:
-  /// **'Comma-separated integers'**
-  String get labelCommaIntegers;
-
-  /// No description provided for @labelInputString.
-  ///
-  /// In en, this message translates to:
-  /// **'Input string'**
-  String get labelInputString;
-
-  /// No description provided for @buttonAdd.
-  ///
-  /// In en, this message translates to:
-  /// **'Add'**
-  String get buttonAdd;
-
-  /// No description provided for @buttonMultiply.
-  ///
-  /// In en, this message translates to:
-  /// **'Multiply'**
-  String get buttonMultiply;
-
-  /// No description provided for @buttonFactorial.
-  ///
-  /// In en, this message translates to:
-  /// **'Factorial'**
-  String get buttonFactorial;
-
-  /// No description provided for @buttonFibonacci.
-  ///
-  /// In en, this message translates to:
-  /// **'Fibonacci'**
-  String get buttonFibonacci;
-
-  /// No description provided for @buttonSumArray.
-  ///
-  /// In en, this message translates to:
-  /// **'Sum Array'**
-  String get buttonSumArray;
-
-  /// No description provided for @buttonToUpper.
-  ///
-  /// In en, this message translates to:
-  /// **'To Upper'**
-  String get buttonToUpper;
-
-  /// No description provided for @resultAdd.
-  ///
-  /// In en, this message translates to:
-  /// **'Add: {value}'**
-  String resultAdd(String value);
-
-  /// No description provided for @resultMultiply.
-  ///
-  /// In en, this message translates to:
-  /// **'Multiply: {value}'**
-  String resultMultiply(String value);
-
-  /// No description provided for @resultFactorial.
-  ///
-  /// In en, this message translates to:
-  /// **'Factorial: {value}'**
-  String resultFactorial(String value);
-
-  /// No description provided for @resultFibonacci.
-  ///
-  /// In en, this message translates to:
-  /// **'Fibonacci: {value}'**
-  String resultFibonacci(String value);
-
-  /// No description provided for @resultArraySum.
-  ///
-  /// In en, this message translates to:
-  /// **'Array sum: {value}'**
-  String resultArraySum(String value);
-
-  /// No description provided for @resultToUpper.
-  ///
-  /// In en, this message translates to:
-  /// **'Result: {value}'**
-  String resultToUpper(String value);
+  /// **'Loading...'**
+  String get loading;
 }
 
 class _AppLocalizationsDelegate

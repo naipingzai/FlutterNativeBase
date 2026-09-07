@@ -12,98 +12,31 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appTitle => 'Flutter 原生基础';
 
   @override
-  String get helloWorld => '你好，世界！';
-
-  @override
-  String counterLabel(int count) {
-    return '按钮点击了 $count 次';
+  String nativeVersion(String version) {
+    return '原生版本：$version';
   }
 
   @override
-  String nativeAddResult(int result) {
-    return '原生加法结果：$result';
-  }
+  String get platformInfoTitle => '平台信息';
 
   @override
-  String version(String version) {
-    return '版本：$version';
-  }
+  String get labelOS => '操作系统';
 
   @override
-  String get arithmeticSection => '算术运算（加法 / 乘法）';
+  String get labelArch => 'CPU 架构';
 
   @override
-  String get mathSection => '数学运算（阶乘 / 斐波那契）';
+  String get labelCompiler => '编译器';
 
   @override
-  String get arraySection => '数组（求和）';
+  String get labelOSVersion => '系统版本';
 
   @override
-  String get stringSection => '字符串（转大写）';
+  String get buttonRefresh => '刷新';
 
   @override
-  String get labelA => 'a';
+  String get buttonSwitchLang => '切换语言';
 
   @override
-  String get labelB => 'b';
-
-  @override
-  String get labelFactorialN => 'n（阶乘）';
-
-  @override
-  String get labelFibonacciN => 'n（斐波那契）';
-
-  @override
-  String get labelCommaIntegers => '逗号分隔的整数';
-
-  @override
-  String get labelInputString => '输入字符串';
-
-  @override
-  String get buttonAdd => '加法';
-
-  @override
-  String get buttonMultiply => '乘法';
-
-  @override
-  String get buttonFactorial => '阶乘';
-
-  @override
-  String get buttonFibonacci => '斐波那契';
-
-  @override
-  String get buttonSumArray => '数组求和';
-
-  @override
-  String get buttonToUpper => '转大写';
-
-  @override
-  String resultAdd(String value) {
-    return '加法：$value';
-  }
-
-  @override
-  String resultMultiply(String value) {
-    return '乘法：$value';
-  }
-
-  @override
-  String resultFactorial(String value) {
-    return '阶乘：$value';
-  }
-
-  @override
-  String resultFibonacci(String value) {
-    return '斐波那契：$value';
-  }
-
-  @override
-  String resultArraySum(String value) {
-    return '数组求和：$value';
-  }
-
-  @override
-  String resultToUpper(String value) {
-    return '结果：$value';
-  }
+  String get loading => '加载中...';
 }

@@ -13,25 +13,9 @@
 /// Returns the version string of the native bridge library.
 FFI_PLUGIN_EXPORT const char* native_bridge_version();
 
-/// Adds two integers.
-FFI_PLUGIN_EXPORT intptr_t bridge_sum(intptr_t a, intptr_t b);
-
-/// Multiplies two integers.
-FFI_PLUGIN_EXPORT intptr_t bridge_multiply(intptr_t a, intptr_t b);
-
-/// A longer lived native function (simulates work).
-FFI_PLUGIN_EXPORT intptr_t bridge_sum_long_running(intptr_t a, intptr_t b);
-
-/// Computes the factorial of n.
-FFI_PLUGIN_EXPORT intptr_t bridge_factorial(intptr_t n);
-
-/// Computes the nth Fibonacci number.
-FFI_PLUGIN_EXPORT intptr_t bridge_fibonacci(intptr_t n);
-
-/// Sums all elements in an intptr_t array.
-FFI_PLUGIN_EXPORT intptr_t bridge_sum_array(const intptr_t* data, intptr_t length);
-
-/// Converts a null-terminated UTF-8 string to uppercase in-place.
-FFI_PLUGIN_EXPORT void bridge_to_upper(char* buffer);
+/// Returns platform info as a null-terminated string.
+/// Format: "os|arch|compiler|os_version"
+/// e.g. "Linux|x86_64|GCC 12.3.0|6.5.0"
+FFI_PLUGIN_EXPORT const char* get_platform_info();
 
 #endif // BRIDGE_API_H

@@ -12,98 +12,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Flutter Native Base';
 
   @override
-  String get helloWorld => 'Hello, World!';
-
-  @override
-  String counterLabel(int count) {
-    return 'Button tapped $count times';
+  String nativeVersion(String version) {
+    return 'Native Version: $version';
   }
 
   @override
-  String nativeAddResult(int result) {
-    return 'Native add result: $result';
-  }
+  String get platformInfoTitle => 'Platform Info';
 
   @override
-  String version(String version) {
-    return 'Version: $version';
-  }
+  String get labelOS => 'Operating System';
 
   @override
-  String get arithmeticSection => 'Arithmetic (sum / multiply)';
+  String get labelArch => 'Architecture';
 
   @override
-  String get mathSection => 'Math (factorial / fibonacci)';
+  String get labelCompiler => 'Compiler';
 
   @override
-  String get arraySection => 'Array (sum_array)';
+  String get labelOSVersion => 'OS Version';
 
   @override
-  String get stringSection => 'String (to_upper)';
+  String get buttonRefresh => 'Refresh';
 
   @override
-  String get labelA => 'a';
+  String get buttonSwitchLang => 'Switch Language';
 
   @override
-  String get labelB => 'b';
-
-  @override
-  String get labelFactorialN => 'n (factorial)';
-
-  @override
-  String get labelFibonacciN => 'n (fibonacci)';
-
-  @override
-  String get labelCommaIntegers => 'Comma-separated integers';
-
-  @override
-  String get labelInputString => 'Input string';
-
-  @override
-  String get buttonAdd => 'Add';
-
-  @override
-  String get buttonMultiply => 'Multiply';
-
-  @override
-  String get buttonFactorial => 'Factorial';
-
-  @override
-  String get buttonFibonacci => 'Fibonacci';
-
-  @override
-  String get buttonSumArray => 'Sum Array';
-
-  @override
-  String get buttonToUpper => 'To Upper';
-
-  @override
-  String resultAdd(String value) {
-    return 'Add: $value';
-  }
-
-  @override
-  String resultMultiply(String value) {
-    return 'Multiply: $value';
-  }
-
-  @override
-  String resultFactorial(String value) {
-    return 'Factorial: $value';
-  }
-
-  @override
-  String resultFibonacci(String value) {
-    return 'Fibonacci: $value';
-  }
-
-  @override
-  String resultArraySum(String value) {
-    return 'Array sum: $value';
-  }
-
-  @override
-  String resultToUpper(String value) {
-    return 'Result: $value';
-  }
+  String get loading => 'Loading...';
 }

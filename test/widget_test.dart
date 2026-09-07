@@ -9,9 +9,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:npz_flutter_code/main.dart';
 
 void main() {
-  testWidgets('App renders', (WidgetTester tester) async {
+  testWidgets('App renders platform info', (WidgetTester tester) async {
     await tester.pumpWidget(const FlutterNativeBaseApp());
-    // Pump and settle to allow localization to load
     await tester.pumpAndSettle();
     expect(find.text('Flutter Native Base'), findsOneWidget);
   });
