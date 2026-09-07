@@ -12,6 +12,51 @@ A cross-platform native bridge framework for Flutter, providing efficient FFI in
 - **Clean Architecture**: Three-layer Dart FFI design (bindings → types → service)
 - **Single Header**: All FFI interfaces defined in `native/include/bridge_api.h`
 
+
+## Material 3 Design Guidelines
+
+### Theme
+
+- Seed color:  (professional teal-green)
+- Supports light/dark themes, follows system via 
+- All colors generated from seed color for visual consistency
+
+### Components
+
+| Component | M3 Spec |
+|-----------|---------|
+| AppBar | Surface color, elevation: 0, scrolledUnderElevation: 1 |
+| Card | elevation: 0, outlineVariant border, borderRadius: 16 |
+| FilledButton.tonal | Tonal fill for action buttons |
+| IconButton.filledTonal | Tonal container for AppBar actions |
+| Divider | 1px outlineVariant, height: 24 |
+| Icon | size: 20, color: primary |
+
+### Layout
+
+- Screen padding: 
+- Card padding: 
+- Section spacing: 24px
+- Section title: titleSmall, primary color, fontWeight: w600
+- Info tile: icon(20px) + label(110px fixed) + value(bodyMedium, w500)
+
+### Header Banner
+
+-  hero section
+- Logo: 56x56 icon with borderRadius: 16
+- Text:  with alpha hierarchy
+
+### Color Hierarchy
+
+| Element | Light | Dark |
+|---------|-------|------|
+| Background | surface | surface |
+| Cards | surface + outlineVariant | surface + outlineVariant |
+| Header | primaryContainer | primaryContainer |
+| Primary | onSurface | onSurface |
+| Secondary | onSurfaceVariant | onSurfaceVariant |
+| Accent | primary | primary |
+
 ## Project Structure
 
 ```
